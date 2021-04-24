@@ -140,7 +140,9 @@ Overwrite the trained model with the corresponding model in the original models,
 |jieba(C++版)	|0.26s	|0.814	    |0.809	 | 0.811     |
 |THULAC_lite	|0.62s	| 0.877	    | 0.899	 |0.888      |
 
-	- pku_test（510KB）
+
+-
+	- pku_test（510KB）	
 
 | Algorithm     | Time  | Precision | Recall | F-Measure |
 | ------------- |:-----:| ---------:| ------:| ---------:|
@@ -163,11 +165,34 @@ Overwrite the trained model with the corresponding model in the original models,
 ## Part-of-speech tag set
 1. Universal mark set (applicable to all versions)
 ```
-n/noun np/person's_name ns/place_name ni/organization_name nz/other_proper_name
-m/numeral q/quantifier mq/quantifier t/time_word f/direction_word s/location_word
-v/verb a/adjective d/adverb h/preceded_by_component k/followed_by_component i/idiom
-j/abbreviation r/pronoun c/conjunction p/preposition u/particle y/modal_particle
-e/interjection o/onomatopoeia g/morphemes w/punctuation x/others
+n/noun 
+np/person's_name 
+ns/place_name 
+ni/organization_name 
+nz/other_proper_name
+m/numeral 
+q/quantifier 
+mq/quantifier 
+t/time_word 
+f/direction_word 
+s/location_word
+v/verb 
+a/adjective 
+d/adverb 
+h/preceded_by_component 
+k/followed_by_component 
+i/idiom
+j/abbreviation 
+r/pronoun 
+c/conjunction 
+p/preposition 
+u/particle 
+y/modal_particle
+e/interjection 
+o/onomatopoeia 
+g/morphemes 
+w/punctuation 
+x/others
 ```
 
 2. Special mark set (applicable to lite_v1_2 version)
@@ -219,3 +244,9 @@ vd/directive_verb
 |2016-01-20	      |Increase the Java version of THULAC word segmentation.         |
 |2016-01-10	      |Open source THULAC word segmentation tool C++ version.         |
 
+## Open source agreement
+1. THULAC is a free and open source code for domestic and foreign universities, research institutes, enterprises and individuals for research purposes.
+2. If any organization or individual intends to use THULAC for commercial purposes, please send an email to thunlp@gmail.com to discuss the technology license agreement.
+3. Any valuable comments and suggestions on this toolkit are welcome. Please send an email to thunlp@gmail.com.
+4. If you publish a paper or obtain scientific research results on the basis of THULAC, please declare that "Tsinghua University THULAC is used" when publishing the paper and applying for the results, and cite it in the following format:
+- *Maosong Sun, Xinxiong Chen, Kaixu Zhang, Zhipeng Guo, Zhiyuan Liu. THULAC: An Efficient Lexical Analyzer for Chinese. 2016.*
