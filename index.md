@@ -13,28 +13,36 @@ THULAC (THU Lexical Analyzer for Chinese) is a set of Chinese lexical analysis t
 
 ## Compile and install
 
-1. C++ version
+1. **C++ version**
 - Run under current path
 - make
 - Will get thulac and train_c in the current directory
 (Thulac needs the support of the model, and the downloaded model needs to be placed in the current directory)
 
-2. Java version
+2. **Java version**
 - Run the executable jar package directly according to the word segmentation program command format
 - To compile by yourself, you need to install Gradle, and then execute gradle build in the project root directory, and the generated files are under build/libs
 (Thulac needs the support of the model, and the downloaded model needs to be placed in the current directory)
 
-3. Python version (compatible with python2.x and python3.x)
+3. **Python version** (compatible with python2.x and python3.x)
 - *Source code download:* \
     Put the thulac file in the directory and reference it by `import thulac` \
 (Thulac needs the support of the model, and the downloaded model needs to be placed in the thulac directory.)
 
 - *pip download* \
     `sudo pip install thulac`\
-** Reference by `import thulac`
+Reference by `import thulac`
 
 
 ## How to use
+1. Word segmentation and part-of-speech (POS) tagging
+    1.1 Command format
+    - C++ version (refer to 1.5 for interface call)
+        - ./thulac [-t2s] [-seg_only] [-deli delimeter] [-user userword.txt] Input and output from the command line
+        - ./thulac [-t2s] [-seg_only] [-deli delimeter] [-user userword.txt] outputfile Use redirection to input and output from text files (note that all are UTF8 text)
+
+
+
 ## Performance comparison with representative word segmentation software
 ## Part-of-speech tag set
 ## Different configurations of THULAC
