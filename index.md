@@ -25,12 +25,12 @@ THULAC (THU Lexical Analyzer for Chinese) is a set of Chinese lexical analysis t
 (Thulac needs the support of the model, and the downloaded model needs to be placed in the current directory)
 
 3. Python version (compatible with python2.x and python3.x)
-* *Source code download:* 
-** Put the thulac file in the directory and reference it by `import thulac`
+- *Source code download:* \
+    Put the thulac file in the directory and reference it by `import thulac` \
 (Thulac needs the support of the model, and the downloaded model needs to be placed in the thulac directory.)
 
-* *pip download*
-** `sudo pip install thulac`
+- *pip download* \
+    `sudo pip install thulac`\
 ** Reference by `import thulac`
 
 
