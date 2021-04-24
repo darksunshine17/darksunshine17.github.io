@@ -115,11 +115,11 @@ The THULAC toolkit provides a model training program `train_c`, and users can us
 - 2.3 **Training set format**\
 - We use the default separator (slash `/`) as an example with sentences have been tagged with parts of speech, the training set content should be similar as:
 ```
-我/r 喜欢/vm 北京/ns 紫禁城/ns
+我/r 爱/vm 北京/ns 天安门/ns
 ```
 - To train a word segmentation model, use the default separator (slash `/`) as an example, and the training set content should be similar as:
 ```
-我/ 喜欢/ 北京/ 紫禁城/
+我/ 爱/ 北京/ 天安门/
 ```
 - 2.4 **Use the trained model**\
 Overwrite the trained model with the corresponding model in the original models, and then execute the word segmentation program to use the trained model.
