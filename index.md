@@ -38,8 +38,30 @@ Reference by `import thulac`
 1. Word segmentation and part-of-speech (POS) tagging \
   1.1 Command format
     - C++ version (refer to 1.5 for interface call)
-        - ./thulac [-t2s] [-seg_only] [-deli delimeter] [-user userword.txt] Input and output from the command line
-        - ./thulac [-t2s] [-seg_only] [-deli delimeter] [-user userword.txt] outputfile Use redirection to input and output from text files (note that all are UTF8 text)
+        - `./thulac [-t2s] [-seg_only] [-deli delimeter] [-user userword.txt]` Input and output from the command line
+        - `./thulac [-t2s] [-seg_only] [-deli delimeter] [-user userword.txt]` outputfile Use redirection to input and output from text files (note that all are UTF8 text) \\
+    - Java version
+        - `java -jar THULAC_lite_java_run.jar [-t2s] [-seg_only] [-deli delimeter] [-user userword.txt]` Input and output from the command line
+        - `java -jar THULAC_lite_java_run.jar [-t2s] [-seg_only] [-deli delimeter] [-user userword.txt] -input input_file -output output_file` Input and output from a text file (note that all are UTF8 text)
+    - Python version (compatible with python2.x and python3.x)\
+    Through the python program `import thulac`, create a new class `thulac.thulac(args)`, where `args` are the parameters of the program. After that, single sentence segmentation can be performed by calling `thulac.cut()`. Detail interface params check 1.4. \\
+
+    Python code examples:\
+    ```
+    import thulac   
+
+    thu1 = thulac.thulac()  # default mode
+    text = thu1.cut("我想去成都吃火锅", text=True)  # one sentence segmentation
+    print(text)
+    ``` 
+
+    Output:\
+    ```
+    Model loaded succeed
+    我_r 想_v 去_v 成都_ns 吃_v 火锅_n
+    ```
+
+
 
 
 
