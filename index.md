@@ -35,8 +35,8 @@ Reference by `import thulac`
 
 
 ## How to use
-1. Word segmentation and part-of-speech (POS) tagging 
-- 1.1 Command format
+1. **Word segmentation and part-of-speech (POS) tagging**
+- 1.1 **Command format**
     - C++ version (refer to 1.5 for interface call)
         - `./thulac [-t2s] [-seg_only] [-deli delimeter] [-user userword.txt]` Input and output from the command line
         - `./thulac [-t2s] [-seg_only] [-deli delimeter] [-user userword.txt]` outputfile Use redirection to input and output from text files (note that all are UTF8 text) \
@@ -44,7 +44,7 @@ Reference by `import thulac`
         - `java -jar THULAC_lite_java_run.jar [-t2s] [-seg_only] [-deli delimeter] [-user userword.txt]` Input and output from the command line
         - `java -jar THULAC_lite_java_run.jar [-t2s] [-seg_only] [-deli delimeter] [-user userword.txt] -input input_file -output output_file` Input and output from a text file (note that all are UTF8 text)
     - Python version (compatible with python2.x and python3.x)\
-    Through the python program `import thulac`, create a new class `thulac.thulac(args)`, where `args` are the parameters of the program. After that, single sentence segmentation can be performed by calling `thulac.cut()`. Detail interface params check 1.4. \
+    Through the python program `import thulac`, create a new class `thulac.thulac(args)`, where `args` are the parameters of the program. After that, single sentence segmentation can be performed by calling `thulac.cut()`. Detail interface params check 1.4. 
 
     **Code Examples 1:**
     ```
@@ -67,7 +67,7 @@ Reference by `import thulac`
     thu1.cut_f("input.txt", "output.txt")  # segmentation of 'input.txt'，output to 'output.txt'
     ```
 
-- 1.2 Common parameters (C++ version, Java version)
+- 1.2 **Common parameters (C++ version, Java version)**
     - *t2s*------------------Convert the sentence from traditional to simplified
     - *seg_only*-------------only word segmentation, no part-of-speech tagging
     - *deli delimeter*-------Set the separator between words and parts of speech, the default is underscore_
@@ -75,11 +75,11 @@ Reference by `import thulac`
     - *user userword.txt*----Set the user dictionary, the words in the user dictionary will be marked with uw label. Each word in the dictionary is encoded in UTF8 (not available in the python version)
     - *model_dir dir*--------Set the folder where the model file is located, the default is models
 
-- 1.3 Java version specific parameters
+- 1.3 **Java version specific parameters**
     - *input input_file*-----Set to read from the file, the default is the command line input
     - *output output_file*---Set the output to the file, the default is the command line output
 
-- 1.4 Python version interface parameters
+- 1.4 **Python version interface parameters**
 	- *user_path*------------Set the user dictionary, the words in the user dictionary will be marked with uw label. Each word in the dictionary, one line, UTF8 encoding
 	- *t2s*------------------default False, whether to convert the sentence from traditional to simplified
 	- *just_seg*-------------default is False, when only word segmentation is performed, no part-of-speech tagging
@@ -87,7 +87,7 @@ Reference by `import thulac`
 	- *model_path*-----------Set the folder where the model file is located, the default is models
 	- *separator*------------The default is `_`, set the separator between words and parts of speech
 
-- 1.5 C++ version interface parameters (need to include `include/thulac.h`)\
+- 1.5 **C++ version interface parameters (need to include `include/thulac.h`)**\
 - First, you need to instantiate the THULAC class, and then you can call the following interface:
 ```
 int init(const char* model_path = NULL, const char* user_path = NULL, int just_seg = 0, int t2s = 0, int ufilter = 0, char separator ='_');
@@ -100,19 +100,19 @@ int init(const char* model_path = NULL, const char* user_path = NULL, int just_s
 	- *model_path*-----------Set the folder where the model file is located, the default is models
 	- *separator*------------The default is`_`, set the separator between words and parts of speech
 
-- 1.6 Use of word segmentation and part-of-speech tagging models \
+- 1.6 **Use of word segmentation and part-of-speech tagging models** \
 THULAC needs the support of word segmentation and part-of-speech tagging models. Users can download them from the download list `THULAC模型 Models_v1.zip` and put them in the root directory of THULAC, or use parameters `-model_dir dir` to specify the location of the model.
 
-2. Model training\
+2. **Model training**\
 The THULAC toolkit provides a model training program `train_c`, and users can use `train_c` to train and obtain the required model of THULAC.
-- 2.1 Command format
+- 2.1 **Command format**
 	- ```./train_c [-s separator] [-b bigram_threshold] [-i iteration] training_filename model_filename```
 	- Use `training_filename` as the training set, and the trained model name is `model_filename`
-- 2.2 Parameters
+- 2.2 **Parameters**
 	- `-s` sets the separator between words and parts of speech, the default is slash `/`
 	- `-b` sets the threshold of the two-character string, the default is 1
 	- `-i` sets the number of training iterations, the default is 15
-- 2.3 Training set format\
+- 2.3 **Training set format**\
 - We use the default separator (slash `/`) as an example with sentences have been tagged with parts of speech, the training set content should be similar as:
 ```
 我/r 喜欢/vm 北京/ns 紫禁城/ns
@@ -121,18 +121,17 @@ The THULAC toolkit provides a model training program `train_c`, and users can us
 ```
 我/ 喜欢/ 北京/ 紫禁城/
 ```
-- 2.4 Use the trained model\
+- 2.4 **Use the trained model**\
 Overwrite the trained model with the corresponding model in the original models, and then execute the word segmentation program to use the trained model.
 
 
 
-
-
-
-
-
-
 ## Performance comparison with representative word segmentation software
+
+
+
+
+
 ## Part-of-speech tag set
 ## Different configurations of THULAC
 ## Get the link
