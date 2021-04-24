@@ -68,12 +68,39 @@ Reference by `import thulac`
     ```
 
 - 1.2 Common parameters (C++ version, Java version)
-    - t2s------------------Convert the sentence from traditional to simplified
-    - seg_only-------------only word segmentation, no part-of-speech tagging
-    - deli delimeter-------Set the separator between words and parts of speech, the default is underscore_
-    - filter---------------Use a filter to remove some meaningless words, such as "can"
-    - user userword.txt----Set the user dictionary, the words in the user dictionary will be marked with uw label. Each word in the dictionary is encoded in UTF8 (not available in the python version)
-    - model_dir dir--------Set the folder where the model file is located, the default is models/
+    - *t2s*------------------Convert the sentence from traditional to simplified
+    - *seg_only*-------------only word segmentation, no part-of-speech tagging
+    - *deli delimeter*-------Set the separator between words and parts of speech, the default is underscore_
+    - *filter*---------------Use a filter to remove some meaningless words, such as "can"
+    - *user userword.txt*----Set the user dictionary, the words in the user dictionary will be marked with uw label. Each word in the dictionary is encoded in UTF8 (not available in the python version)
+    - *model_dir dir*--------Set the folder where the model file is located, the default is models
+
+- 1.3 Java version specific parameters
+    - *input input_file*-----Set to read from the file, the default is the command line input
+    - *output output_file*---Set the output to the file, the default is the command line output
+
+- 1.4 Python version interface parameters
+	- *user_path*------------Set the user dictionary, the words in the user dictionary will be marked with uw label. Each word in the dictionary, one line, UTF8 encoding
+	- *t2s*------------------default False, whether to convert the sentence from traditional to simplified
+	- *just_seg*-------------default is False, when only word segmentation is performed, no part-of-speech tagging
+	- *ufilter*--------------default False, whether to use the filter to remove some meaningless words, such as `can`
+	- *model_path*-----------Set the folder where the model file is located, the default is models
+	- *separator*------------The default is `_`, set the separator between words and parts of speech
+
+- 1.5 C++ version interface parameters (need to include `include/thulac.h`)
+First, you need to instantiate the THULAC class, and then you can call the following interface:
+```int init(const char* model_path = NULL, const char* user_path = NULL, int just_seg = 0, int t2s = 0, int ufilter = 0, char separator ='_');```
+Initialize the program, make custom settings
+	- *user_path*------------Set the user dictionary, the words in the user dictionary will be marked with uw label. Each word in the dictionary, one line, UTF8 encoding
+	- *t2s*------------------default False, whether to convert the sentence from traditional to simplified
+	- *just_seg*-------------default is False, when only word segmentation is performed, no part-of-speech tagging
+	- *ufilter*--------------The default is False, whether to use the filter to remove some meaningless words, such as `can`.
+	- *model_path*-----------Set the folder where the model file is located, the default is models
+	- *separator*------------The default is`_`, set the separator between words and parts of speech
+
+- 1.6 Use of word segmentation and part-of-speech tagging models \
+THULAC needs the support of word segmentation and part-of-speech tagging models. Users can download them from the download list `THULAC模型 Models_v1.zip` and put them in the root directory of THULAC, or use parameters `-model_dir dir` to specify the location of the model.
+
 
 
 
