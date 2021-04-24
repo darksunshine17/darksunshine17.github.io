@@ -88,7 +88,7 @@ Reference by `import thulac`
 	- *separator*------------The default is `_`, set the separator between words and parts of speech
 
 - 1.5 C++ version interface parameters (need to include `include/thulac.h`)\
-First, you need to instantiate the THULAC class, and then you can call the following interface:
+First, you need to instantiate the THULAC class, and then you can call the following interface:\
 ```int init(const char* model_path = NULL, const char* user_path = NULL, int just_seg = 0, int t2s = 0, int ufilter = 0, char separator ='_');``` \
 Initialize the program, make custom settings
 	- *user_path*------------Set the user dictionary, the words in the user dictionary will be marked with uw label. Each word in the dictionary, one line, UTF8 encoding
