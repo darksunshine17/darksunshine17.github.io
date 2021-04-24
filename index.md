@@ -131,8 +131,8 @@ The THULAC toolkit provides a model training program `train_c`, and users can us
 	- `-b` sets the threshold of the two-character string, the default is 1
 	- `-i` sets the number of training iterations, the default is 15
 - 2.3 **Training set format**\
-- We use the default separator (slash `/`) as an example with sentences have been tagged with parts of speech, the training set content should be similar as 1st line
-- To train a word segmentation model, use the default separator (slash `/`) as an example, and the training set content should be similar as 2nd line
+	- We use the default separator (slash `/`) as an example with sentences have been tagged with parts of speech, the training set content should be similar as 1st line
+	- To train a word segmentation model, use the default separator (slash `/`) as an example, and the training set content should be similar as 2nd line
 
 ```
 我/r 爱/vm 北京/ns 天安门/ns
