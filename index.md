@@ -127,6 +127,20 @@ Overwrite the trained model with the corresponding model in the original models,
 
 
 ## Performance comparison with representative word segmentation software
+- We choose [LTP-3.2.0](https://github.com/HIT-SCIR/ltp), [ICTCLAS (2015 version)](http://ictclas.nlpir.org/index_e.html), [jieba (C++ version)](https://github.com/yanyiwu/cppjieba) and other Chinese representative word segmentation software packages for performance comparison with THULAC. We chose Windows as the test environment, and tested the speed and accuracy of different software according to the international Chinese word segmentation evaluation standards published by The Second International Chinese Word Segmentation Bakeoff.
+- In the second international Chinese word segmentation test, a total of four units provided test corpus (Academia Sinica, City University, Peking University, Microsoft Research), and the resource [icwb2-data](http://sighan.cs.uchicago.edu/bakeoff2005/) provided by the evaluation included training from these four training set (training), test set (testing), and the standard answer (`icwb2-data/scripts/gold`) of the corresponding test set provided according to the respective word segmentation standards. The `icwb2-data/scripts` directory contains perl script score for automatic scoring of word segmentation.
+- We tested the above popular word segmentation software and THULAC in a unified test environment, and the model used was the model that comes with each word segmentation software. THULAC uses the simple model `Model_1` provided with the software. The evaluation environment is `Intel Core i5 2.4 GHz`. The evaluation results are as follows:
+
+	- msr_test (560KB)
+
+| Algorithm     | Time  | Precision | Recall | F-Measure |
+| ------------- |:-----:| ---------:| ------:| ---------:|
+| LTP-3.2.0	    |3.21s  |  	0.867   | 0.896	 | 0.881     |
+|ICTCLAS(2015版)|0.55s	|0.869	    |0.914	 |0.891      |
+|jieba(C++版)	|0.26s	|0.814	    |0.809	 | 0.811     |
+|THULAC_lite	|0.62s	| 0.877	    | 0.899	 |0.888      |
+
+
 
 
 
