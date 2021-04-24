@@ -140,15 +140,82 @@ Overwrite the trained model with the corresponding model in the original models,
 |jieba(C++版)	|0.26s	|0.814	    |0.809	 | 0.811     |
 |THULAC_lite	|0.62s	| 0.877	    | 0.899	 |0.888      |
 
+	- pku_test（510KB）
 
+| Algorithm     | Time  | Precision | Recall | F-Measure |
+| ------------- |:-----:| ---------:| ------:| ---------:|
+|LTP-3.2.0	    |3.83s	|0.960	    |0.947	 |0.953      |
+|ICTCLAS(2015版)	|0.53s	|0.939	    |0.944	 |0.941      |
+|jieba(C++版)	|0.23s	|0.850	    |0.784	 |0.816      |
+|THULAC_lite	|0.51s	|0.944	    |0.908	 |0.926      |
 
+- In addition to the above evaluation on the standard test set, we also evaluated the speed of each word segmentation tool on big data. The results are as follows:
+	- CNKI_journal.txt (51 MB)
 
-
+| Algorithm     | Time    | Speed      | 
+| ------------- |:-------:| ----------:| 
+|LTP-3.2.0	    |348.624s |	149.80KB/s |
+|ICTCLAS(2015版)	|106.461s |	490.59KB/s |
+|jieba(C++版)	|22.558s  |	2314.89KB/s|
+|THULAC_lite    |42.625s  |	1221.05KB/s|
 
 
 ## Part-of-speech tag set
+1. Universal mark set (applicable to all versions)
+```
+n/noun np/person's_name ns/place_name ni/organization_name nz/other_proper_name
+m/numeral q/quantifier mq/quantifier t/time_word f/direction_word s/location_word
+v/verb a/adjective d/adverb h/preceded_by_component k/followed_by_component i/idiom
+j/abbreviation r/pronoun c/conjunction p/preposition u/particle y/modal_particle
+e/interjection o/onomatopoeia g/morphemes w/punctuation x/others
+```
+
+2. Special mark set (applicable to lite_v1_2 version)
+- In order to facilitate the filtering after word segmentation and part-of-speech tagging, in the `v1_2` version, we have added two parts of speech, which can be downloaded and used if necessary.
+```
+vm/can_wish_verb
+vd/directive_verb
+```
+
 ## Different configurations of THULAC
+1. We have attached a simple word segmentation model `Model_1` with the THULAC source code, which only supports word segmentation. The model was trained by the People's Daily sub-word corpus.
+2. We have attached the combined word segmentation and part-of-speech tagging model `Model_2` with the THULAC source code, which supports simultaneous word segmentation and part-of-speech tagging. The model is trained by the People's Daily word segmentation and part-of-speech tagging corpus.
+3. We also provide more complex, complete and accurate word segmentation and part-of-speech tagging joint model `Model_3` and `word segmentation vocabulary`. The model is obtained by joint training and training of multiple corpora (the corpus includes annotated text from multiple styles and annotated text from People's Daily, etc.). Due to the large model, if there is a need for institutions or individuals, please fill in the [resource application form.doc](http://thulac.thunlp.org/source/shenqingbiao.docx) and send it to *thunlp@gmail.com* for approval, we will send the relevant resources to the contact.
+
 ## Get the link
+- The THULAC toolkit is divided into two parts. The first part is the algorithm source code part, which can be download from Github without registration; the second part is the algorithm model part. THULAC needs the support of word segmentation and part-of-speech tagging model, which can be obtained Algorithm Model after registration.
+
+1. Algorithm source code lite version
+- [THULAC_lite](http://thulac.thunlp.org/message_v1_1)
+	- THULAC_lite word segmentation source code (C++ version)	
+	- THULAC_lite word segmentation source code (python version)	
+	- THULAC_lite word segmentation source code (java version)	
+	- THULAC_lite word segmentation java version executable jar package	
+	- THULAC model, including word segmentation model and part-of-speech tagging model (lite version)
+
+2. Algorithm source code lite version (github)
+
+- THULAC_lite_C++: THULAC_lite word segmentation source code (C++ version) [link](https://github.com/thunlp/THULAC)
+- THULAC_lite_Python:	THULAC_lite word segmentation source code (python version) [link](https://github.com/thunlp/THULAC-Python)	 
+- THULAC_lite_Java: THULAC_lite word segmentation source code (java version) [link](https://github.com/thunlp/THULAC-Java)
+- THULAC_lite.So: THULAC_lite word segmentation source code (So version) [link](https://github.com/thunlp/THULAC.So)
+
+3. Algorithm model
+
+- THULAC_lite_Model: THULAC model, including word segmentation model and part-of-speech tagging model (lite version) [link](http://thulac.thunlp.org/message_v1_1)
+- THULAC pro v1.zip (C++): THULAC model, including more complex and complete word segmentation and part-of-speech tagging models and word segmentation vocabulary [link](http://thulac.thunlp.org/register)
+ 
+
 ## Precautions
+- The tool currently only handles UTF8 encoded Chinese text, and will gradually increase the support for other encoding functions, so stay tuned.
+
 ## History
+
+| Update time     | update content                                                | 
+| --------------- |:-------------------------------------------------------------:| 
+|2017-01-17	      |Publish the python version of THULAC word segmentation on pip. |
+|2016-10-10	      |Add the so version of THULAC word segmentation.                |
+|2016-03-31	      |Increase the python version of THULAC word segmentation.       |
+|2016-01-20	      |Increase the Java version of THULAC word segmentation.         |
+|2016-01-10	      |Open source THULAC word segmentation tool C++ version.         |
 
