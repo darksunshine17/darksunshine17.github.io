@@ -36,7 +36,7 @@ Reference by `import thulac`
 
 ## How to use
 1. Word segmentation and part-of-speech (POS) tagging \
-1.1 Command format
+- 1.1 Command format
     - C++ version (refer to 1.5 for interface call)
         - `./thulac [-t2s] [-seg_only] [-deli delimeter] [-user userword.txt]` Input and output from the command line
         - `./thulac [-t2s] [-seg_only] [-deli delimeter] [-user userword.txt]` outputfile Use redirection to input and output from text files (note that all are UTF8 text) \\
@@ -66,8 +66,8 @@ Reference by `import thulac`
     thu1 = thulac.thulac(seg_only=True)  # Only perform sentence segmentation, no POS tag
     thu1.cut_f("input.txt", "output.txt")  # segmentation of 'input.txt'，output to 'output.txt'
     ```
-\
-  1.2 Common parameters (C++ version, Java version)
+
+- 1.2 Common parameters (C++ version, Java version)
     - t2s------------------Convert the sentence from traditional to simplified
     - seg_only-------------only word segmentation, no part-of-speech tagging
     - deli delimeter-------Set the separator between words and parts of speech, the default is underscore_
