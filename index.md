@@ -35,8 +35,8 @@ Reference by `import thulac`
 
 
 ## How to use
-1. Word segmentation and part-of-speech (POS) tagging
-    1.1 Command format
+1. Word segmentation and part-of-speech (POS) tagging \
+  1.1 Command format
     - C++ version (refer to 1.5 for interface call)
         - ./thulac [-t2s] [-seg_only] [-deli delimeter] [-user userword.txt] Input and output from the command line
         - ./thulac [-t2s] [-seg_only] [-deli delimeter] [-user userword.txt] outputfile Use redirection to input and output from text files (note that all are UTF8 text)
