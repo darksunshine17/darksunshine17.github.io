@@ -35,8 +35,8 @@ Reference by `import thulac`
 
 
 ## How to use
-&nbsp;1. Word segmentation and part-of-speech (POS) tagging \
-&nbsp;&nbsp;&nbsp;1.1 Command format
+1. Word segmentation and part-of-speech (POS) tagging \
+  1.1 Command format
     - C++ version (refer to 1.5 for interface call)
         - `./thulac [-t2s] [-seg_only] [-deli delimeter] [-user userword.txt]` Input and output from the command line
         - `./thulac [-t2s] [-seg_only] [-deli delimeter] [-user userword.txt]` outputfile Use redirection to input and output from text files (note that all are UTF8 text) \\
@@ -66,14 +66,14 @@ Reference by `import thulac`
     thu1 = thulac.thulac(seg_only=True)  # Only perform sentence segmentation, no POS tag
     thu1.cut_f("input.txt", "output.txt")  # segmentation of 'input.txt'，output to 'output.txt'
     ```
-
-&nbsp;&nbsp;&nbsp;1.2 Common parameters (C++ version, Java version)
-      - t2s------------------Convert the sentence from traditional to simplified
-      - seg_only-------------only word segmentation, no part-of-speech tagging
-      - deli delimeter-------Set the separator between words and parts of speech, the default is underscore_
-      - filter---------------Use a filter to remove some meaningless words, such as "can"
-      - user userword.txt----Set the user dictionary, the words in the user dictionary will be marked with uw label. Each word in the dictionary is encoded in UTF8 (not available in the python version)
-      - model_dir dir--------Set the folder where the model file is located, the default is models/
+\
+  1.2 Common parameters (C++ version, Java version)
+    - t2s------------------Convert the sentence from traditional to simplified
+    - seg_only-------------only word segmentation, no part-of-speech tagging
+    - deli delimeter-------Set the separator between words and parts of speech, the default is underscore_
+    - filter---------------Use a filter to remove some meaningless words, such as "can"
+    - user userword.txt----Set the user dictionary, the words in the user dictionary will be marked with uw label. Each word in the dictionary is encoded in UTF8 (not available in the python version)
+    - model_dir dir--------Set the folder where the model file is located, the default is models/
 
 
 
