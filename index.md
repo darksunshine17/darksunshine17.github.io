@@ -63,6 +63,21 @@ Reference by `import thulac`
 
     **Code Examples 2:**
     ```
+    import thulac   
+
+    thu1 = thulac.thulac()  # default mode
+    fall = "不逢北国之秋，已将近十余年了。在南方每年到了秋天，总要想起陶然亭的芦花，钓鱼台的柳影，西山的虫唱，玉泉的夜月，潭柘寺的钟声。在北平即使不出门去罢，就是在皇城人海之中，租人家一椽破屋来住着，早晨起来，泡一碗浓茶、向院子一坐，你也能看得到很高很高的碧绿的天色，听得到青天下驯鸽的飞声。从槐树叶底，朝东细数着一丝一丝漏下来的日光，或在破壁腰中，静对着象喇叭似的牵牛花（朝荣）的蓝朵，自然而然地也能够感觉到十分的秋意。说到了牵牛花，我以为以蓝色或白色者为佳，紫黑色次之，淡红色最下。最好，还要在牵牛花底，教长着几根疏疏落落的尖细且长的秋草，使作陪衬。"
+text = thu1.cut(fall, text=True)  # one sentence segmentation
+print(text)
+    ``` 
+
+    **Output:**
+    ```
+    不_d 逢_v 北国_s 之_u 秋_g ，_w 已_d 将近_d 十_m 余_m 年_q 了_u 。_w 在_p 南方_s 每年_r 到_v 了_u 秋天_t ，_w 总_d 要_v 想起_v 陶然亭_ns 的_u 芦花_n ，_w 钓鱼台_ns 的_u 柳影_n ，_w 西山_ns 的_u 虫_n 唱_v ，_w 玉泉_ns 的_u 夜月_t ，_w 潭柘寺_ns 的_u 钟声_n 。_w 在_p 北平_ns 即使_c 不_d 出门_v 去_v 罢_v ，_w 就_d 是_v 在_p 皇城_ns 人海_n 之中_f ，_w 租_v 人_n 家_n 一_d 椽_v 破_a 屋_n 来_v 住_v 着_u ，_w 早晨_t 起_f 来_v ，_w 泡_v 一_m 碗_q 浓茶_n 、_w 向_p 院子_n 一_d 坐_v ，_w 你_r 也_d 能_v 看_v 得到_v 很_d 高_a 很_d 高_a 的_u 碧绿_a 的_u 天色_n ，_w 听_v 得_u 到_v 青_a 天下_n 驯鸽_n 的_u 飞声_n 。_w 从_p 槐树_n 叶底_v ，_w 朝_p 东细_s 数_v 着_u 一丝一_m 丝_q 漏_v 下_v 来_v 的_u 日光_n ，_w 或_c 在_p 破壁腰_n 中_f ，_w 静_a 对_v 着_u 象_g 喇叭_n 似_g 的_u 牵牛花_n （_w 朝荣_np ）_w 的_u 蓝朵_n ，_w 自然而然_id 地_u 也_d 能够_v 感觉_v 到_v 十分_m 的_u 秋意_n 。_w 说_v 到_v 了_u 牵_v 牛_n 花_n ，_w 我_r 以为_v 以_p 蓝色_n 或_c 白色者_n 为_v 佳_a ，_w 紫黑色_n 次_g 之_r ，_w 淡红色_n 最_d 下_v 。_w 最_d 好_a ，_w 还要_v 在_p 牵_v 牛_n 花_n 底_f ，_w 教_v 长_v 着_u 几_m 根_q 疏疏落落_a 的_u 尖细_a 且_c 长_a 的_u 秋草_n ，_w 使_v 作_v 陪衬_n 。_w
+    ```
+
+    **Code Examples 3:**
+    ```
     thu1 = thulac.thulac(seg_only=True)  # Only perform sentence segmentation, no POS tag
     thu1.cut_f("input.txt", "output.txt")  # segmentation of 'input.txt'，output to 'output.txt'
     ```
@@ -117,7 +132,7 @@ The THULAC toolkit provides a model training program `train_c`, and users can us
 ```
 我/r 爱/vm 北京/ns 天安门/ns
 ```
-- To train a word segmentation model, use the default separator (slash `/`) as an example, and the training set content should be similar as:
+- To train a word segmentation model, use the default separator (slash `/`) as an example, and the training set content should be similar as
 ```
 我/ 爱/ 北京/ 天安门/
 ```
