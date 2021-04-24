@@ -46,7 +46,7 @@ Reference by `import thulac`
     - Python version (compatible with python2.x and python3.x)\
     Through the python program `import thulac`, create a new class `thulac.thulac(args)`, where `args` are the parameters of the program. After that, single sentence segmentation can be performed by calling `thulac.cut()`. Detail interface params check 1.4. \\
 
-    Python code examples:\
+    **Code Examples 1:**
     ```
     import thulac   
 
@@ -55,11 +55,25 @@ Reference by `import thulac`
     print(text)
     ``` 
 
-    Output:\
+    **Output:**
     ```
     Model loaded succeed
     我_r 想_v 去_v 成都_ns 吃_v 火锅_n
     ```
+
+    **Code Examples 2:**
+    ```
+    thu1 = thulac.thulac(seg_only=True)  # Only perform sentence segmentation, no POS tag
+    thu1.cut_f("input.txt", "output.txt")  # segmentation of 'input.txt'，output to 'output.txt'
+    ```
+
+  1.2 Common parameters (C++ version, Java version)
+      - t2s------------------Convert the sentence from traditional to simplified
+      - seg_only-------------only word segmentation, no part-of-speech tagging
+      - deli delimeter-------Set the separator between words and parts of speech, the default is underscore_
+      - filter---------------Use a filter to remove some meaningless words, such as "can"
+      - user userword.txt----Set the user dictionary, the words in the user dictionary will be marked with uw label. Each word in the dictionary is encoded in UTF8 (not available in the python version)
+      - model_dir dir--------Set the folder where the model file is located, the default is models/
 
 
 
